@@ -8,9 +8,9 @@
   <label><strong> Notes:</strong></label>
   <li><%= @course.notes %></li><br>
 
-    <form action="/courses/<%= @course.id%>" method="post">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-    <input type="submit" value="Edit Course">
+    <a href="/courses/<%=@course.id%>/edit"><button>Edit Course</button></a>
+
+    <form action="/courses/<%= @course.id%>/delete" method="post">
     <input id="hidden" type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Course">
 </form>

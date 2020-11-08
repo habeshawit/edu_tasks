@@ -47,16 +47,37 @@ class CoursesController < ApplicationController
 
   # GET: /tasks/5/edit
   get "/courses/:id/edit" do
-    
+     @course = Course.find_by_id(params[:id])
+    if Helpers.is_logged_in?(session) && @course.user == Helpers.current_user(session)
+      erb :"courses/edit"
+    else
+      redirect '/login'
+    end
   end
 
   # PATCH: /tasks/5
   patch "/courses/:id" do
-    redirect "/courses/:id"
+    @course = Course.find_by_id(params[:id])
+        
+        if @course && @course.user == Helpers.current_user(session) #&& params[:content] != ""
+            @course.schedule = params[:schedule]
+            @course.assignments = params[:assignments]
+            @course.notes = params[:notes]
+            @course.save
+            redirect to "/courses/#{@course.id}"
+        else
+            redirect "/courses/#{@courses.id}/edit"
+        end
   end
 
   # DELETE: /tasks/5/delete
   delete "/courses/:id/delete" do
-    redirect "/courses"
+    @course = Helpers.current_user(session).courses.find_by(:id => params[:id])
+        if @course
+          @course.delete
+          redirect "/courses"
+        else
+          redirect "/login"
+        end
   end
 end

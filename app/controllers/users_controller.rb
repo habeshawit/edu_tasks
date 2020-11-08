@@ -14,10 +14,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # POST: /users
-  # post "/users" do
-  #   redirect "/users"
-  # end
   post '/signup' do
     user = User.create(:username => params[:username], :email => params[:email], :password => params[:password])
     session[:user_id] = user.id
@@ -30,23 +26,59 @@ class UsersController < ApplicationController
 
   end
 
-  # GET: /users/5
-  get "/users/:id" do
-    erb :"/users/show.html"
+  get '/login' do 
+    if Helpers.is_logged_in?(session)
+      redirect to '/courses'
+    end
+    
+    erb :"/users/login"
   end
 
-  # GET: /users/5/edit
-  get "/users/:id/edit" do
-    erb :"/users/edit.html"
+  post '/login' do
+    user = User.find_by(:username => params["username"])
+
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect to '/courses'
+    else
+      redirect to '/login'
+    end
   end
 
-  # PATCH: /users/5
-  patch "/users/:id" do
-    redirect "/users/:id"
+  get '/logout' do
+    if Helpers.is_logged_in?(session)
+      session.clear
+        redirect to '/login'
+    else
+        redirect to 'views/welcome'
+    end
+
+    # erb :"users/logout"
   end
 
-  # DELETE: /users/5/delete
-  delete "/users/:id/delete" do
-    redirect "/users"
-  end
+get '/users/:slug' do
+  slug = params[:slug]
+  @user = User.find_by_slug(slug)
+  erb :"users/show"
+end
+
+  # # GET: /users/5
+  # get "/users/:id" do
+  #   erb :"/users/show"
+  # end
+
+  # # GET: /users/5/edit
+  # get "/users/:id/edit" do
+  #   erb :"/users/edit"
+  # end
+
+  # # PATCH: /users/5
+  # patch "/users/:id" do
+  #   redirect "/users/:id"
+  # end
+
+  # # DELETE: /users/5/delete
+  # delete "/users/:id/delete" do
+  #   redirect "/users"
+  # end
 end
