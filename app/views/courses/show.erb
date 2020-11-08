@@ -1,0 +1,17 @@
+<h1><%= @course.name %> Tasks</h1>
+
+  <h3><li></li></h3><br>
+  <label><strong> Schedule:</strong></label>
+  <li><%= @course.schedule %></li><br>
+  <label><strong> Assignments:</strong></label>
+  <li><%= @course.assignments %></li><br>
+  <label><strong> Notes:</strong></label>
+  <li><%= @course.notes %></li><br>
+
+    <form action="/courses/<%= @course.id%>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <input type="submit" value="Edit Course">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Course">
+</form>
+
