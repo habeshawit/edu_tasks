@@ -1,13 +1,12 @@
 <h1>Create a new course below</h1>
+<h2></h2>
 <% if Helpers.is_logged_in?(session) %>
-<%= @error %>
   <form action='/courses' method="post">
     Course Name:<input type="text" name="name"><br>
     Course Schedule:<input type="text" name="schedule"><br>
     Assignments:<input type="text" name="assignments"><br>
     Notes:<input type="text" name="notes"><br>
-
-    <input type="submit" name="Save" id="submit">
+    <input type="submit" value="Save">
   </form>
 
   <% else %>

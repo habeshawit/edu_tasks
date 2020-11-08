@@ -2,7 +2,7 @@
 
 <h2>Courses You are Enrolled in</h2>
 <% if @courses.empty? %>
-<p>You have not created any courses. Click <a href="/courses/new"><button>Add A Course</button></a> to begin</p>
+<p>You have not created any courses. Click <a href="/courses/new">Add A Course</a> to begin</p>
 <% else %>
   <% @courses.each do |course| %>
     <h4>Course: <%= course.name %></h4>

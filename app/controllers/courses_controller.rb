@@ -5,9 +5,9 @@ class CoursesController < ApplicationController
     if !Helpers.is_logged_in?(session)
       redirect to '/login'
     else
-        @courses= Course.all
-        @user = Helpers.current_user(session)
-        erb :"/courses/index"
+      @user = Helpers.current_user(session)  
+      @courses= @user.courses
+      erb :"/courses/index"
     end
     
   end
