@@ -9,9 +9,10 @@ gem 'sqlite3', '~> 1.3.13'
 gem 'thin'
 gem 'shotgun'
 gem 'pry'
-gem 'bcrypt'
+gem 'bcrypt'  #encrypts password
 gem 'tux'
 gem 'rb-readline'
+gem 'rack-flash3'
 
 group :test do
   gem 'rspec'

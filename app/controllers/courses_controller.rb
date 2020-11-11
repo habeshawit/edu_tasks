@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
 
+
   # GET: /tasks
   get "/courses" do
     if !Helpers.is_logged_in?(session)
@@ -60,6 +61,7 @@ class CoursesController < ApplicationController
     @course = Course.find_by_id(params[:id])
         
         if @course && @course.user == Helpers.current_user(session) #&& params[:content] != ""
+            @course.name = params[:name]
             @course.schedule = params[:schedule]
             @course.assignments = params[:assignments]
             @course.notes = params[:notes]
@@ -74,6 +76,7 @@ class CoursesController < ApplicationController
   delete "/courses/:id/delete" do
     @course = Helpers.current_user(session).courses.find_by(:id => params[:id])
         if @course
+          #check if sure
           @course.delete
           redirect "/courses"
         else

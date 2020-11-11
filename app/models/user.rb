@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
     has_secure_password
     has_many :courses
+    # has_many :assignments, through: :courses
+    has_many :assignments, :through => :courses
 
+    # accepts_nested_attributes_for :courses
     def slug
         self.username.gsub(" ", "-").downcase
     end

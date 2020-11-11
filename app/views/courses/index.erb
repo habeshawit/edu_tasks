@@ -1,13 +1,13 @@
 <h1>Welcome, <%= @user.username %></h1>
-
+<div class="content">
 <h2>Courses You are Enrolled in</h2>
 <% if @courses.empty? %>
-<p>You have not created any courses. Click <a href="/courses/new">Add A Course</a> to begin</p>
+<p>You have not created any courses. <a href="/courses/new">Add A Course</a> to begin</p><br><br><br><br>
 <% else %>
   <% @courses.each do |course| %>
-    <h4>Course: <%= course.name %></h4>
+    <h4><%= course.name %></h4>
     <p><a href="/courses/<%= course.id %>">View course</a></p>
   <% end %>
   <a href="/courses/new"><button>Add A Course</button></a><br>
   <%end%>
-   
+ </div>  

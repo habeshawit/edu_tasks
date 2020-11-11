@@ -2,11 +2,18 @@
 <h2></h2>
 <% if Helpers.is_logged_in?(session) %>
   <form action='/courses' method="post">
-    Course Name:<input type="text" name="name"><br>
-    Course Schedule:<input type="text" name="schedule"><br>
-    Assignments:<input type="text" name="assignments"><br>
-    Notes:<input type="text" name="notes"><br>
-    <input type="submit" value="Save">
+  <label>Course Name</label>
+  <input type="text" name="name"><br>
+  <label>Course Schedule</label>
+  <input type="text" name="schedule"><br>
+  <label>Assignments</label>
+  <br><textarea name="assignments" rows="4" cols="50"></textarea><br>
+  <td><input type="text" name="assignment[][description]"></td>
+<td><input type="text" name="assignment[][due_date]">
+
+  <label>Notes</label>
+  <br><textarea name="notes"rows="4" cols="50"></textarea><br>
+  <input type="submit" value="Save">
   </form>
 
   <% else %>

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # end
 
   # GET: /users/new
-  get "/signup" do
+  get "/signup" do   #add a check if email address already exists
     if Helpers.is_logged_in?(session) 
       redirect '/courses'
     else 
@@ -15,6 +15,11 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
+    user = User.find_by(:email => params[:email])
+    if user
+      #add some error message
+      redirect '/login'
+    end
     user = User.create(:username => params[:username], :email => params[:email], :password => params[:password])
     session[:user_id] = user.id
 
@@ -52,8 +57,6 @@ class UsersController < ApplicationController
     else
         redirect to 'views/welcome'
     end
-
-    # erb :"users/logout"
   end
 
 get '/users/:slug' do
@@ -61,6 +64,7 @@ get '/users/:slug' do
   @user = User.find_by_slug(slug)
   erb :"users/show"
 end
+
 
   # # GET: /users/5
   # get "/users/:id" do
