@@ -27,8 +27,8 @@ class CoursesController < ApplicationController
   post "/courses" do
     user = Helpers.current_user(session)
     if !params["name"].empty?
-        course = Course.create(:name => params["name"], :schedule => params[:schedule], :assignments => params[:assignments], :notes => params[:notes], :user_id => user.id)
-        if course.save
+        @course = Course.create(:name => params["name"], :schedule => params[:schedule], :assignments => params[:assignments], :notes => params[:notes], :user_id => user.id)
+        if @course.save
             redirect "/courses"
         end   
     else
@@ -36,6 +36,16 @@ class CoursesController < ApplicationController
     end
   end
 
+  get "/courses/assignments" do
+    @courses = Helpers.current_user(session).courses
+    erb :"courses/assignments"
+  end
+
+  get "/courses/notes" do
+    @courses = Helpers.current_user(session).courses
+    erb :"courses/notes"
+  end
+  
   # GET: /tasks/5
   get "/courses/:id" do
     if Helpers.is_logged_in?(session)
@@ -45,6 +55,8 @@ class CoursesController < ApplicationController
       redirect to '/login'
     end
   end
+
+
 
   # GET: /tasks/5/edit
   get "/courses/:id/edit" do
@@ -83,4 +95,6 @@ class CoursesController < ApplicationController
           redirect "/login"
         end
   end
+  
+
 end

@@ -1,0 +1,18 @@
+
+<H2>Your Notes:</h1>
+<div class="content">
+<% if @courses.empty? %>
+<p>You do not have any notes</p><br><br><br><br>
+<% else %>
+  <% @courses.each do |course| %>
+  <%notes = course.notes.split("\r\n")%>
+  <%notes.each do |note|%>
+  <ul> &#9679 <a href="/courses/<%= course.id %>"> <%=note%> </a> </ul>
+  <%end%>
+    
+  <% end %>
+
+  <%end%>
+ </div>  
+
+ 

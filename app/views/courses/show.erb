@@ -5,9 +5,15 @@
   <label><strong> Schedule:</strong></label>
   <li><%= @course.schedule %></li><br>
   <label><strong> Assignments:</strong></label>
-  <li><%= @course.assignments %></li><br>
+  <%list_assignment = @course.assignments.split("\r\n")%>
+  <%list_assignment.each do |a|%>
+  <li>&#9679  <%=a%></li>
+  <%end%><br>
   <label><strong> Notes:</strong></label>
-  <li><%= @course.notes %></li><br>
+  <%notes = @course.notes.split("\r\n")%>
+  <%notes.each do |note|%>
+  <li>&#9679  <%=note%></li>
+  <%end%><br>
 
     <a href="/courses/<%=@course.id%>/edit"><button>Edit Course</button></a>
 

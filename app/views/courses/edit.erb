@@ -5,11 +5,11 @@
     <label><strong> Name:</strong></label>
   <input type="text" name="name" value="<%= @course.name %>"><br>
   <label><strong> Schedule:</strong></label>
-  <input type="text" name="schedule" value="<%= @course.schedule %>"><br>
+  <input type="text" name="schedule" value="<%= @course.schedule%>"><br>
   <label><strong> Assignments:</strong></label>
-  <input type="text" name="assignments" value="<%= @course.assignments %>"><br>
-  <label><strong> Notes:</strong></label>
-  <input type="text" name="notes" value="<%= @course.notes %>"><br>
+  <br><textarea name="assignments"  rows="4" cols="50"><%= @course.assignments%></textarea><br>
+  <label>Notes</label>
+  <br><textarea name="notes" rows="4" cols="50"><%= @course.notes %></textarea><br>
     <input type="submit" value="Save">
 
 </form>

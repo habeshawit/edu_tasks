@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
 
-  # GET: /users
-  # get "/users" do
-  #   erb :"/users/index"
-  # end
+  #GET: /users
+  get "/users" do
+    if !Helpers.is_logged_in?(session)
+      redirect to '/login'
+    else
+      @user = Helpers.current_user(session)  
+      erb :"/users/show"
+    end
+  end
 
   # GET: /users/new
   get "/signup" do   #add a check if email address already exists
@@ -66,23 +71,51 @@ get '/users/:slug' do
 end
 
 
-  # # GET: /users/5
-  # get "/users/:id" do
-  #   erb :"/users/show"
-  # end
+  # GET: /users/5
+  get "/users/:id" do
+    binding.pry
+    if Helpers.is_logged_in?(session)
+      @user = Helpers.current_user(session)
+      erb :"users/show"
+    else
+      redirect to '/login'
+    end
+  end
 
-  # # GET: /users/5/edit
-  # get "/users/:id/edit" do
-  #   erb :"/users/edit"
-  # end
+  # GET: /users/5/edit
+  get "/users/:id/edit" do
+    @user = Helpers.current_user(session)
+    if Helpers.is_logged_in?(session) && @user == Helpers.current_user(session)
+      erb :"users/edit"
+    else
+      redirect '/login'
+    end
+  end
 
-  # # PATCH: /users/5
-  # patch "/users/:id" do
-  #   redirect "/users/:id"
-  # end
+  # PATCH: /users/5
+  patch "/users/:id" do
+    user = User.find_by(:id => params["id"])
+    if user == Helpers.current_user(session)
+    user.username = params[:username]
+    user.email = params[:email]
+    user.password = params[:password]
+    user.save
+    redirect to "/users"
+  else
+    redirect "/users"
+  end
+end
 
-  # # DELETE: /users/5/delete
-  # delete "/users/:id/delete" do
-  #   redirect "/users"
-  # end
+  # DELETE: /users/5/delete
+  delete "/users/:id/delete" do
+    user = User.find_by(:id => params["id"])
+    if user == Helpers.current_user(session)
+      session.clear
+      user.delete
+      redirect "/"
+    else
+      redirect "/"
+    end
+  end
+  
 end
