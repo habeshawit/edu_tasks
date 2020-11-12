@@ -2,17 +2,17 @@ class UsersController < ApplicationController
 
   #GET: /users
   get "/users" do
-    if !Helpers.is_logged_in?(session)
+    if !logged_in?
       redirect to '/login'
     else
-      @user = Helpers.current_user(session)  
+      @user = current_user  
       erb :"/users/show"
     end
   end
 
   # GET: /users/new
   get "/signup" do   #add a check if email address already exists
-    if Helpers.is_logged_in?(session) 
+    if logged_in? 
       redirect '/courses'
     else 
       erb :'/users/signup' 
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   get '/login' do 
-    if Helpers.is_logged_in?(session)
+    if logged_in?
       redirect to '/courses'
     end
     
@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   end
 
   get '/logout' do
-    if Helpers.is_logged_in?(session)
+    if logged_in?
       session.clear
         redirect to '/'
     else
@@ -73,19 +73,21 @@ end
 
   # GET: /users/5
   get "/users/:id" do
+    
     binding.pry
-    if !Helpers.is_logged_in?(session)
+    if !logged_in?
       redirect to '/login'
     else
-      @user = Helpers.current_user(session)  
+      @user = User.find_by_slug(slug)
+      @user = current_user  
       erb :"/users/show"
     end
   end
 
   # GET: /users/5/edit
   get "/users/:id/edit" do
-    @user = Helpers.current_user(session)
-    if Helpers.is_logged_in?(session) && @user == Helpers.current_user(session)
+    @user = current_user
+    if logged_in? && @user == current_user
       erb :"users/edit"
     else
       redirect '/login'
@@ -95,7 +97,7 @@ end
   # PATCH: /users/5
   patch "/users/:id" do
     user = User.find_by(:id => params["id"])
-    if user == Helpers.current_user(session)
+    if user == current_user
     user.username = params[:username]
     user.email = params[:email]
     user.password = params[:password]
@@ -109,7 +111,7 @@ end
   # DELETE: /users/5/delete
   delete "/users/:id/delete" do
     user = User.find_by(:id => params["id"])
-    if user == Helpers.current_user(session)
+    if user == current_user
       session.clear
       user.delete
       redirect "/"

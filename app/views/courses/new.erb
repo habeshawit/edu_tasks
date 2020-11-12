@@ -1,6 +1,6 @@
 <h1>Create a new course below</h1>
 <h2></h2>
-<% if Helpers.is_logged_in?(session) %>
+<% if logged_in? %>
   <form action='/courses' method="post">
   <label>Course Name</label>
   <input type="text" name="name"><br>

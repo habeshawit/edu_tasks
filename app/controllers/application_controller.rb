@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    @user = Helpers.current_user(session) if Helpers.is_logged_in?(session) 
+    @user = current_user if logged_in?
     if @user
       redirect "/courses"
     else
@@ -20,12 +20,16 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  helpers do
+    def current_user
+      @user = User.find(session[:user_id])
+    end
+  
+    def logged_in?
+      !!session[:user_id]
+    end
+  end
+
 
 end
 
-
-#assignment model/attribute?
-#course has many assign
-#assignment belongs to course
-
-#

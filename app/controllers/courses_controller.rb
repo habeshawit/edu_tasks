@@ -3,10 +3,10 @@ class CoursesController < ApplicationController
 
   # GET: /tasks
   get "/courses" do
-    if !Helpers.is_logged_in?(session)
+    if !logged_in?
       redirect to '/login'
     else
-      @user = Helpers.current_user(session)  
+      @user = current_user 
       @courses= @user.courses
       erb :"/courses/index"
     end
@@ -15,7 +15,7 @@ class CoursesController < ApplicationController
 
   # GET: /tasks/new
   get "/courses/new" do
-    if Helpers.is_logged_in?(session)
+    if logged_in?
       erb :"/courses/new"
   else
       redirect to "users/login"
@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
 
   # POST: /tasks
   post "/courses" do
-    user = Helpers.current_user(session)
+    user = current_user
     if !params["name"].empty?
         @course = Course.create(:name => params["name"], :schedule => params[:schedule], :assignments => params[:assignments], :notes => params[:notes], :user_id => user.id)
         if @course.save
@@ -37,18 +37,18 @@ class CoursesController < ApplicationController
   end
 
   get "/courses/assignments" do
-    @courses = Helpers.current_user(session).courses
+    @courses = current_user.courses
     erb :"courses/assignments"
   end
 
   get "/courses/notes" do
-    @courses = Helpers.current_user(session).courses
+    @courses = current_user.courses
     erb :"courses/notes"
   end
   
   # GET: /tasks/5
   get "/courses/:id" do
-    if Helpers.is_logged_in?(session)
+    if logged_in?
       @course = Course.find_by(id: params[:id])
       erb :"courses/show"
     else
@@ -61,7 +61,7 @@ class CoursesController < ApplicationController
   # GET: /tasks/5/edit
   get "/courses/:id/edit" do
      @course = Course.find_by_id(params[:id])
-    if Helpers.is_logged_in?(session) && @course.user == Helpers.current_user(session)
+    if logged_in? && @course.user == current_user
       erb :"courses/edit"
     else
       redirect '/login'
@@ -72,7 +72,7 @@ class CoursesController < ApplicationController
   patch "/courses/:id" do
     @course = Course.find_by_id(params[:id])
         
-        if @course && @course.user == Helpers.current_user(session) #&& params[:content] != ""
+        if @course && @course.user == current_user #&& params[:content] != ""
             @course.name = params[:name]
             @course.schedule = params[:schedule]
             @course.assignments = params[:assignments]
@@ -86,7 +86,7 @@ class CoursesController < ApplicationController
 
   # DELETE: /tasks/5/delete
   delete "/courses/:id/delete" do
-    @course = Helpers.current_user(session).courses.find_by(:id => params[:id])
+    @course = current_user.courses.find_by(:id => params[:id])
         if @course
           #check if sure
           @course.delete

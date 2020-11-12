@@ -21,7 +21,7 @@
     <div class="wrapper">
 
         <%= yield %>
-    <% if Helpers.is_logged_in?(session) %>
+    <% if logged_in? %>
     <!DOCTYPE html>
 <html>
 <head>
@@ -73,7 +73,7 @@ body {
   <a href="/courses/new">Add A New Course</a>
   <a href="/courses/assignments">Upcoming assignments</a>
   <a href="/courses/notes">My Notes</a>
-  <h5><a href="/users">Account Settings</a>
+  <h5><a href="/users/<%=current_user.slug%>">Account Settings</a>
   <h5><a href="/logout">Log Out</a>
 </div>
 
