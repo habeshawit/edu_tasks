@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
-    user = User.find_by(:username => params["username"])
+    user = User.find_by(:email => params["email"])
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
@@ -74,11 +74,11 @@ end
   # GET: /users/5
   get "/users/:id" do
     binding.pry
-    if Helpers.is_logged_in?(session)
-      @user = Helpers.current_user(session)
-      erb :"users/show"
-    else
+    if !Helpers.is_logged_in?(session)
       redirect to '/login'
+    else
+      @user = Helpers.current_user(session)  
+      erb :"/users/show"
     end
   end
 

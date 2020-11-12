@@ -22,16 +22,67 @@
 
         <%= yield %>
     <% if Helpers.is_logged_in?(session) %>
-     <div class="sidebar">
-     
-      <h5>What would you like to do?</h5>
-      <h5><a href="/courses">View My Course</a></h5>
-      <h5><a href="/courses/new">Add A New Course</a></h5>
-      <h5><a href="/courses/assignments">View upcoming assignments</a></h5>
-      <h5><a href="/courses/notes">View my notes</a></h5>
-      <h5><a href="/users">Account Settings</a></h5>
-      <h5><a href="/logout">Log Out</a></h3>
-    </div>
+    <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  width: 260px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #2196F3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="/courses">My Courses</a>
+  <a href="/courses/new">Add A New Course</a>
+  <a href="/courses/assignments">Upcoming assignments</a>
+  <a href="/courses/notes">My Notes</a>
+  <h5><a href="/users">Account Settings</a>
+  <h5><a href="/logout">Log Out</a>
+</div>
+
+
+
+</body>
+</html> 
+
+    
       <% end %>
 
       <footer class="branding">

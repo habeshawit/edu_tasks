@@ -2,13 +2,18 @@
 <H2>Your Upcoming Assignments are:</h1>
 <div class="content">
 <% if @courses.empty? %>
-<p>You do not have any upcoming assignments!!</p><br><br><br><br>
+<p>You have not created any assignments. <a href="/courses/new">Add A Course</a> to begin</p><br><br><br><br>
 <% else %>
   <% @courses.each do |course| %>
+  <% if course.assignments.empty? %>
+<p>You have not created any assignments. Add An Assignment to A Course</p><br><br><br><br>
+<% else %>
   <%list_assignment = course.assignments.split("\r\n")%>
   <%list_assignment.each do |a|%>
   <ul>&#9679 <%=a%> ( <a href="/courses/<%= course.id %>"><%=course.name%></a> )</ul>
   <%end%>
+    <%end%>
+
     
   <% end %>
 
