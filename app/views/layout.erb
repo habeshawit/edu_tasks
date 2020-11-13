@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
@@ -30,12 +31,18 @@
   </div>
  <% end %>
 
-        <%= yield %>
     <% if logged_in? %>
+    <!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="/users/<%=current_user.slug%>"  class="w3-bar-item w3-button">My Profile</a>
+    <a href="/users/<%=current_user.slug%>"  class="w3-bar-item w3-button">My Profile</a>
+    <a href="/users/<%=current_user.slug%>"  class="w3-bar-item w3-button">My Profile</a>
+    <a href="/users/<%=current_user.slug%>"  class="w3-bar-item w3-button">My Profile</a>
+    <a href="/users/<%=current_user.slug%>"  class="w3-bar-item w3-button">My Profile</a>
     
-
-
-
+  </div>
+</div>
 <div class="sidenav">
   <a href="/courses">My Courses</a>
   <a href="/courses/new">Add A New Course</a>
@@ -47,6 +54,7 @@
    
       <% end %>
 
+        <%= yield %>
       <footer class="branding">
         <small>&copy; 2020 <strong>EduTasks</strong></small>
       </footer>

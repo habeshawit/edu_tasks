@@ -66,8 +66,8 @@ class UsersController < ApplicationController
     end
   end
 
-get '/users/:slug' do
-  if params[:slug] == current_user.slug
+get '/users/:id' do
+  if logged_in?
     erb :"users/show"
   else
     flash[:alert_danger] = "This page does not exist! Redirecting to your profile."
@@ -77,7 +77,7 @@ end
 
   # GET: /users/5/edit
   get "/users/:id/edit" do
-    if logged_in? && params[:id] == current_user.id
+    if logged_in?
       erb :"users/edit"
     else
       flash[:alert_danger] = "This page does not exist! Redirecting to your profile."
@@ -87,7 +87,7 @@ end
 
   # PATCH: /users/5
   patch "/users/:id" do
-    user = User.find_by(:id => params["id"])
+    user = User.find_by(:id => params[:id])
     if user == current_user
     user.username = params[:username]
     user.email = params[:email]

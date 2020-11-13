@@ -1,11 +1,11 @@
 <h1>Editing <%=@course.name%></h1>
 <h2></h2>
 <form method=post action="/courses/<%=@course.id%>">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-    <label><strong> Name:</strong></label>
-  <input type="text" name="name" value="<%= @course.name %>" required > * <br>
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label><strong> Name:</strong></label>
+  <br><input type="text" name="name" value="<%= @course.name %>" required > * <br>
   <label><strong> Schedule:</strong></label>
-  <input type="text" name="schedule" value="<%= @course.schedule%>"><br>
+  <br><input type="text" name="schedule" value="<%= @course.schedule%>"><br>
   <label><strong> Assignments:</strong></label>
   <br><textarea name="assignments"  rows="4" cols="50"><%= @course.assignments%></textarea><br>
   <label>Notes</label>
