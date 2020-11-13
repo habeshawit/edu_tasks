@@ -3,7 +3,7 @@
 <% if logged_in? %>
   <form action='/courses' method="post">
   <label>Course Name</label>
-  <input type="text" name="name"><br>
+  <input type="text" name="name" required> *<br>
   <label>Course Schedule</label>
   <input type="text" name="schedule"><br>
   <label>Assignments</label>

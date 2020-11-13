@@ -13,6 +13,7 @@ gem 'bcrypt'  #encrypts password
 gem 'tux'
 gem 'rb-readline'
 gem 'rack-flash3'
+gem  'sinatra-flash'
 
 group :test do
   gem 'rspec'

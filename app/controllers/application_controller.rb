@@ -1,11 +1,13 @@
 require './config/environment'
+require 'sinatra/base'
+require 'sinatra/flash'
 
 class ApplicationController < Sinatra::Base
 
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
-    # use Rack::Flash
+    register Sinatra::Flash
     enable :sessions
     set :session_secret, "secret"
     
@@ -21,13 +23,21 @@ class ApplicationController < Sinatra::Base
   end
 
   helpers do
-    def current_user
-      @user = User.find(session[:user_id])
-    end
-  
+    
     def logged_in?
       !!session[:user_id]
     end
+
+    def current_user
+      if logged_in?
+      @user = User.find(session[:user_id])
+      else
+        flash[:alert_danger] = "You need to log in or sign up to access this page!"
+        redirect "/"
+      end
+    end
+  
+    
   end
 
 

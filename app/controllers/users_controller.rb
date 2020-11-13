@@ -22,25 +22,23 @@ class UsersController < ApplicationController
   post '/signup' do
     user = User.find_by(:email => params[:email])
     if user
-      #add some error message
+      flash[:alert_danger] = "An account with this email address is already registered. Log in or use a different email address to continue!"
       redirect '/login'
     end
     user = User.create(:username => params[:username], :email => params[:email], :password => params[:password])
     session[:user_id] = user.id
 
     if user.save && user.username != "" && user.email !="" && user.password !=""
-            redirect "/courses"
-        else
-            redirect "/signup"
-        end
-
+      redirect "/courses"
+    else
+      redirect "/signup"
+    end
   end
 
   get '/login' do 
     if logged_in?
       redirect to '/courses'
-    end
-    
+    end   
     erb :"/users/login"
   end
 
@@ -50,7 +48,11 @@ class UsersController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect to '/courses'
+    elsif user!=nil && !user.authenticate(params[:password])
+      flash[:alert_danger] = "Incorrect password. Try again!"
+      redirect to '/login'
     else
+      flash[:alert_danger] = "Could not find a matching account. Please create an account to begin!"
       redirect to '/login'
     end
   end
@@ -65,32 +67,21 @@ class UsersController < ApplicationController
   end
 
 get '/users/:slug' do
-  slug = params[:slug]
-  @user = User.find_by_slug(slug)
-  erb :"users/show"
-end
-
-
-  # GET: /users/5
-  get "/users/:id" do
-    
-    binding.pry
-    if !logged_in?
-      redirect to '/login'
-    else
-      @user = User.find_by_slug(slug)
-      @user = current_user  
-      erb :"/users/show"
-    end
+  if params[:slug] == current_user.slug
+    erb :"users/show"
+  else
+    flash[:alert_danger] = "This page does not exist! Redirecting to your profile."
+    redirect '/users'
   end
+end
 
   # GET: /users/5/edit
   get "/users/:id/edit" do
-    @user = current_user
-    if logged_in? && @user == current_user
+    if logged_in? && params[:id] == current_user.id
       erb :"users/edit"
     else
-      redirect '/login'
+      flash[:alert_danger] = "This page does not exist! Redirecting to your profile."
+      redirect '/users/:slug'
     end
   end
 
@@ -104,6 +95,7 @@ end
     user.save
     redirect to "/users"
   else
+    flash[:alert_danger] = "This page does not exist! Redirecting to your profile."
     redirect "/users"
   end
 end

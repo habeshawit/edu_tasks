@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
   # GET: /tasks
   get "/courses" do
     if !logged_in?
+      flash[:alert_danger] = "You must log in to view your courses!"
       redirect to '/login'
     else
       @user = current_user 
@@ -18,7 +19,8 @@ class CoursesController < ApplicationController
     if logged_in?
       erb :"/courses/new"
   else
-      redirect to "users/login"
+    flash[:alert_danger] = "You must be logged in to see your courses"
+    redirect to 'login'
   end
     
   end
@@ -32,7 +34,7 @@ class CoursesController < ApplicationController
             redirect "/courses"
         end   
     else
-        redirect "/courses/new"
+      redirect "/courses/new"
     end
   end
 
@@ -48,14 +50,15 @@ class CoursesController < ApplicationController
   
   # GET: /tasks/5
   get "/courses/:id" do
-    if logged_in?
-      @course = Course.find_by(id: params[:id])
+    @course = Course.find_by_id(params[:id])
+
+    if logged_in? && @course.user == current_user
       erb :"courses/show"
     else
-      redirect to '/login'
+      flash[:alert_danger] = "Could not find this course. Redirecting to your courses"
+      redirect to '/courses'
     end
   end
-
 
 
   # GET: /tasks/5/edit
@@ -64,7 +67,8 @@ class CoursesController < ApplicationController
     if logged_in? && @course.user == current_user
       erb :"courses/edit"
     else
-      redirect '/login'
+      flash[:alert_danger] = "You need to login or signup to access this page"
+      redirect to '/'
     end
   end
 
@@ -72,7 +76,7 @@ class CoursesController < ApplicationController
   patch "/courses/:id" do
     @course = Course.find_by_id(params[:id])
         
-        if @course && @course.user == current_user #&& params[:content] != ""
+        if @course && @course.user == current_user
             @course.name = params[:name]
             @course.schedule = params[:schedule]
             @course.assignments = params[:assignments]
@@ -80,7 +84,8 @@ class CoursesController < ApplicationController
             @course.save
             redirect to "/courses/#{@course.id}"
         else
-            redirect "/courses/#{@courses.id}/edit"
+          flash[:alert_danger] = "Could not find this course! Redirecting your courses"
+          redirect "/courses"
         end
   end
 
