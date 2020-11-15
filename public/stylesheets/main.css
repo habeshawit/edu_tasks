@@ -197,6 +197,10 @@ body {
   background-color: darkcyan;
   text-align: center;
   transition: all 0.2s; }
+  .container button:hover {
+    cursor: pointer;
+    background-color: grey;
+    transition: ease 0.5s; }
 .container li {
   font-size: 15pt;
   line-height: 40px; }

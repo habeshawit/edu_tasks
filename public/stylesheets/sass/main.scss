@@ -261,6 +261,11 @@ body{
     background-color: darkcyan;
     text-align:center;
     transition: all 0.2s;
+    &:hover{
+      cursor: pointer;
+       background-color: grey;
+       transition: ease 0.5s;
+    }
     }
 
     li{
