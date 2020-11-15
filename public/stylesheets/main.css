@@ -13,6 +13,8 @@
     margin-bottom: 2px; }
   .login form {
     line-height: 35px; }
+  .login a {
+    line-height: 3em; }
 
 .bg {
   background-image: url("https://image.cnbcfm.com/api/v1/image/104312981-1571936775338princ.jpg?v=1571936800&w=740&h=416");
@@ -22,7 +24,7 @@
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442;
-  font-size: 20pt; }
+  font-size: 15pt; }
 
 .header {
   display: flex;
@@ -68,10 +70,8 @@ body {
   padding: 0;
   margin: 0;
   background-image: url("https://www.theedadvocate.org/wp-content/uploads/2017/10/markets_we_serve_colleges_universities_led_lighting-660x400.jpg");
-  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%; }
+  background-size: 100%; }
 
 .wrapper {
   border-radius: 18px;
@@ -85,24 +85,22 @@ body {
   /* 18px / 800px */
   padding-top: 1.5%;
   width: 85%;
-  height: 820px; }
+  height: 860px; }
   .wrapper .logo img {
     inline-size: 95pt; }
 
 .branding {
-  margin-top: 25px; }
+  margin: 25px; }
 
 .container form {
   line-height: 40px;
   font-size: 15pt; }
   .container form input {
-    font-size: 12pt;
-    font-family: monospace; }
+    font-size: 12pt; }
   .container form textarea {
     font-size: 12pt;
     width: 700px;
-    height: 120px;
-    font-family: monospace; }
+    height: 150px; }
 .container h1 {
   color: darkcyan; }
 .container h2 {
@@ -127,5 +125,12 @@ body {
   background-color: darkcyan;
   text-align: center;
   transition: all 0.2s; }
+.container li {
+  font-size: 15pt;
+  line-height: 40px; }
+.container .notes-container {
+  position: fixed;
+  left: 700px;
+  top: 280px; }
 
 /*# sourceMappingURL=main.css.map */

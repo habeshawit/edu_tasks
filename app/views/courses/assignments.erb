@@ -11,7 +11,7 @@
     <%else %>
       <%list_assignment = course.assignments.split("\r\n")%>
       <%list_assignment.each do |a|%>
-      <ul>&#9679 <%=a%> ( <a href="/courses/<%= course.id %>"><%=course.name%></a> )</ul>
+      <li><%=a%> ( <a href="/courses/<%= course.id %>"><%=course.name%></a> )</li>
       <%end%>     
     <%end%>
     

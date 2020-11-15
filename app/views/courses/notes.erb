@@ -11,7 +11,7 @@
     <% else %>
       <%notes = course.notes.split("\r\n")%>
       <%notes.each do |note|%>
-      <ul> &#9679 <a href="/courses/<%= course.id %>"> <%=note%> </a> </ul>
+      <li><a href="/courses/<%= course.id %>"> <%=note%> </a> </li>
       <%end%>
     <%end%>
     <%end%>
