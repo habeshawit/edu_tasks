@@ -1,21 +1,24 @@
 
-<H2>Your Notes:</h1>
+<h1>Your Notes:</h1>
 <div class="content">
+<% display = []%>
 <% if @courses.empty? %>
 <p>You have not created any notes. <a href="/courses/new">Add A Course</a> to begin</p><br><br><br><br>
 <% else %>
   <% @courses.each do |course| %>
-    <% if course.assignments.empty? %>
-<p>You have not created any notes. Add Notes to A Course</p><br><br><br><br>
-<% else %>
-  <%notes = course.notes.split("\r\n")%>
-  <%notes.each do |note|%>
-  <ul> &#9679 <a href="/courses/<%= course.id %>"> <%=note%> </a> </ul>
-  <%end%>
-  <%end%>
-    
-  <% end %>
+    <% if course.notes.empty? %>
+      <% display << "none"%>
+    <% else %>
+      <%notes = course.notes.split("\r\n")%>
+      <%notes.each do |note|%>
+      <ul> &#9679 <a href="/courses/<%= course.id %>"> <%=note%> </a> </ul>
+      <%end%>
+    <%end%>
+    <%end%>
 
+<%if !display.empty? && display.size == @courses.size%>
+      <p>Looks like you don't have any notes. Add notes to your <a href="/courses">courses</a></p><br><br><br><br></p>
+    <%end%> 
   <%end%>
  </div>  
 

@@ -4,7 +4,8 @@ require './config/environment'
 #   raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
 # end
 
-
+require 'sass/plugin/rack'
+use Sass::Plugin::Rack
 use Rack::MethodOverride
 run ApplicationController
 use CoursesController

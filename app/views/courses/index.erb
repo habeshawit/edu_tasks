@@ -5,9 +5,9 @@
 <p>You have not created any courses. <a href="/courses/new">Add A Course</a> to begin</p><br><br><br><br>
 <% else %>
   <% @courses.each do |course| %>
-    <h4><%= course.name %></h4>
-    <p><a href="/courses/<%= course.id %>">View course</a></p>
+    <h3>&emsp;<%= course.name %>&emsp;<a href="/courses/<%= course.id %>">View course</a></h3>
   <% end %>
-  <a href="/courses/new"><button>Add A Course</button></a><br>
+  <br><br><br><br><br>
+  &emsp;<a href="/courses/new"><button>Add A Course</button></a><br>
   <%end%>
  </div>  

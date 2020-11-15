@@ -1,24 +1,23 @@
 <h1></h1>
 <h1><%= @course.name %> Tasks</h1>
 
-  <h2><li></li></h2>
   <label><strong> Schedule:</strong></label>
   <li><%= @course.schedule %></li><br>
   <label><strong> Assignments:</strong></label>
   <%list_assignment = @course.assignments.split("\r\n")%>
   <%list_assignment.each do |a|%>
-  <li>&#9679  <%=a%></li>
+  <li><%=a%></li>
   <%end%><br>
   <label><strong> Notes:</strong></label>
   <%notes = @course.notes.split("\r\n")%>
   <%notes.each do |note|%>
-  <li>&#9679  <%=note%></li>
+  <li><%=note%></li>
   <%end%><br>
 
     <a href="/courses/<%=@course.id%>/edit"><button>Edit Course</button></a>
 
     <form onsubmit="return confirm('Are you sure you want to delete this course?')" action="/courses/<%= @course.id%>/delete" method="post">
     <input id="hidden" type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Course">
+    <button>Delete Course</button>
 </form>
 

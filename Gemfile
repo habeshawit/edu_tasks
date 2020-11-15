@@ -14,6 +14,7 @@ gem 'tux'
 gem 'rb-readline'
 gem 'rack-flash3'
 gem  'sinatra-flash'
+gem 'sass'
 
 group :test do
   gem 'rspec'
