@@ -1,6 +1,6 @@
 
 <h1>Your Notes:</h1>
-<div class="content">
+<div class="content-notes">
 <% display = []%>
 <% if @courses.empty? %>
 <p>You have not created any notes. <a href="/courses/new">Add A Course</a> to begin</p><br><br><br><br>
@@ -9,12 +9,15 @@
     <% if course.notes.empty? %>
       <% display << "none"%>
     <% else %>
+    
       <%notes = course.notes.split("\r\n")%>
       <%notes.each do |note|%>
       <li><a href="/courses/<%= course.id %>"> <%=note%> </a> </li>
       <%end%>
     <%end%>
+
     <%end%>
+
 
 <%if !display.empty? && display.size == @courses.size%>
       <p>Looks like you don't have any notes. Add notes to your <a href="/courses">courses</a></p><br><br><br><br></p>

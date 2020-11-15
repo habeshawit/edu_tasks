@@ -2,12 +2,12 @@
 
   <h3><label><strong> Schedule:</strong></label></h3>
   <p><li><%= @course.schedule %></li><p>
-  <br><h3><label><strong> Assignments:</strong></label></h3>
+  <h3><label><strong> Assignments:</strong></label></h3>
   <%list_assignment = @course.assignments.split("\r\n")%>
   <%list_assignment.each do |a|%>
   <li><%=a%></li>
   <%end%>
-  <div class=notes-container>
+  <div class=notes>
   <h3><label><strong> Notes:</strong></label></h3>
   <%notes = @course.notes.split("\r\n")%>
   <%notes.each do |note|%>
@@ -15,7 +15,7 @@
   <%end%><br>
   </div>
 
-   <br><br><br> <a href="/courses/<%=@course.id%>/edit"><button>Edit Course</button></a>
+   <br><br><br><br><br> <a href="/courses/<%=@course.id%>/edit"><button>Edit Course</button></a>
 
     <form onsubmit="return confirm('Are you sure you want to delete this course?')" action="/courses/<%= @course.id%>/delete" method="post">
     <input id="hidden" type="hidden" name="_method" value="delete">

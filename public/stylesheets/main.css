@@ -128,7 +128,10 @@ body {
 .container li {
   font-size: 15pt;
   line-height: 40px; }
-.container .notes-container {
+.container .content-notes {
+  display: grid;
+  grid-template-columns: 50% 50%; }
+.container .notes {
   position: fixed;
   left: 700px;
   top: 280px; }

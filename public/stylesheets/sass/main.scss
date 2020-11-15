@@ -191,11 +191,17 @@ body{
       font-size: 15pt;
       line-height: 40px;
     }
-    .notes-container{
+    
+    .content-notes{
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+    
+    .notes{
       position: fixed;
       left: 700px;
       top: 280px;
-    }
     
+    }
 }
 
