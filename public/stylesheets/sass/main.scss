@@ -1,16 +1,62 @@
 .welcome {
   .title{
     h1{
-      color: darkcyan;
-      margin-top: 1.5px;
+      font-size: 140px;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 700;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      margin-top: 50px;
     }
    p{
-      font-size: 16pt;
-      line-height: 1.5em;
+    font-size: 25px;
+    color: #fff;
+    line-height: 52px;
+    font-weight: 700;
+    margin-bottom: 1.5rem !important;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+    height: 120px;
+    width: 600px;
+    margin-top: 100px;
+    margin-left: 150px;
     } 
+ 
   } 
-}
+  .wrapper2{  
+    background: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 10px 34px -15px rgba(0,0,0,.24);
+    -moz-box-shadow: 0 10px 34px -15px rgba(0,0,0,.24);
+    box-shadow: 0 10px 34px -15px rgba(0,0,0,.24);
+    z-index: 0;
+    padding: 3rem!important;
+    box-sizing: border-box;
+    position: fixed;
+      left: 1480px;
+      top: 300px;
+      font-family: "Poppins",Arial,sans-serif;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #999;
+  }
 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+
+   padding: 0;
+    margin: 0;
+    background-image: url("https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 .login{
  line-height: 25px;
@@ -26,18 +72,48 @@
  a{
   line-height: 3em;
  }
- 
+ .wrapper2{  
+  background: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 34px -15px rgba(0,0,0,.24);
+  -moz-box-shadow: 0 10px 34px -15px rgba(0,0,0,.24);
+  box-shadow: 0 10px 34px -15px rgba(0,0,0,.24);
+  z-index: 0;
+  padding: 3rem!important;
+  box-sizing: border-box;
+  position: fixed;
+    right: 1480px;
+    top: 300px;
+    font-family: "Poppins",Arial,sans-serif;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #999;
 }
-.bg{
-  background-image: url("https://image.cnbcfm.com/api/v1/image/104312981-1571936775338princ.jpg?v=1571936800&w=740&h=416");
-  height: 100%
+position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+
+   padding: 0;
+    margin: 0;
+    background-image: url("https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
 }
 
 .alert_danger{
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442;
-  font-size: 15pt;
+  font-size: 20pt;
+  z-index: 1;
+  position: relative;
 }
 
 .header{
@@ -199,8 +275,8 @@ body{
     
     .notes{
       position: fixed;
-      left: 700px;
-      top: 280px;
+      left: 900px;
+      top: 300px;
     
     }
 }
