@@ -60,7 +60,6 @@ class CoursesController < ApplicationController
     end
   end
 
-
   # GET: /tasks/5/edit
   get "/courses/:id/edit" do
      @course = Course.find_by_id(params[:id])
@@ -101,5 +100,4 @@ class CoursesController < ApplicationController
         end
   end
   
-
 end

@@ -22,8 +22,7 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  helpers do
-    
+  helpers do  
     def logged_in?
       !!session[:user_id]
     end
@@ -35,11 +34,8 @@ class ApplicationController < Sinatra::Base
         flash[:alert_danger] = "You need to log in or sign up to access this page!"
         redirect "/"
       end
-    end
-  
-    
+    end  
   end
-
 
 end
 
