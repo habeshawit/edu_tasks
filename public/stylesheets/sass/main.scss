@@ -1,25 +1,27 @@
 .welcome {
   .title{
-    h1{
-      font-size: 140px;
-      color: rgba(255, 255, 255, 0.8);
+    h1{   
+      font-size: 125px;
       font-weight: 700;
+      color: lightseagreen;
+      opacity: 45%;
+      margin-left: 80px;
       text-transform: uppercase;
       box-sizing: border-box;
       margin-top: 50px;
     }
    p{
-    font-size: 25px;
-    color: #fff;
+    color: #5b6363;
+    font-family: monospace;
+    font-size: 24px;
     line-height: 52px;
     font-weight: 700;
     margin-bottom: 1.5rem !important;
     box-sizing: border-box;
-    font-family: "Poppins", Arial, sans-serif;
     height: 120px;
     width: 600px;
-    margin-top: 100px;
-    margin-left: 150px;
+    margin-top: 90px;
+    margin-left: 160px;
     } 
  
   } 
@@ -32,12 +34,12 @@
     z-index: 0;
     padding: 3rem!important;
     box-sizing: border-box;
-    position: fixed;
-      left: 1480px;
-      top: 300px;
+    position: absolute;
+      left: 1400px;
+      top: 250px;
       font-family: "Poppins",Arial,sans-serif;
     background: #fff;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.8;
     font-weight: 400;
     color: #999;
@@ -59,7 +61,7 @@
 }
 
 .login{
- line-height: 25px;
+ line-height: 45px;
  button{
    margin-top: 10px;
  }
@@ -81,13 +83,13 @@
   z-index: 0;
   padding: 3rem!important;
   box-sizing: border-box;
-  position: fixed;
-    right: 1480px;
+  position: absolute;
+    right: 1290px;
     top: 300px;
     font-family: "Poppins",Arial,sans-serif;
   background: #fff;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 5px;
   font-weight: 400;
   color: #999;
 }
@@ -100,7 +102,7 @@ position: absolute;
 
    padding: 0;
     margin: 0;
-    background-image: url("https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-image: url("https://cdn.pixabay.com/photo/2017/12/31/12/38/adult-3052244_960_720.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
