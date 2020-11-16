@@ -10,7 +10,7 @@ And then execute:
 $ bundle install
 
 ## Usage
-After cloning the repository and running bundle, follow the steps belo:
+After cloning the repository and running bundle, follow the steps below:
 1) Run: rake db:migrate
 2) Run: shotgun
 3) Follow onscreen prompts
