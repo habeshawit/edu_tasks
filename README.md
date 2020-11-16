@@ -19,4 +19,4 @@ After cloning the repository and running bundle, follow the steps below:
 Bug reports and pull requests are welcome on GitHub at https://github.com/habeshawit/edu_tasks.
 
 ## License
-The app is available as open source under the terms of the MIT License.
+The gem is available as open source under the terms of the MIT License.
