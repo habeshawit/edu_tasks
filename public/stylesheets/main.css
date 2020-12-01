@@ -161,10 +161,12 @@ body {
   width: 85%;
   height: 860px; }
   .wrapper .logo img {
-    inline-size: 95pt; }
+    inline-size: 85pt; }
 
 .branding {
-  margin: 25px; }
+  margin: 25px;
+  position: fixed;
+  bottom: 120px; }
 
 .container form {
   line-height: 40px;

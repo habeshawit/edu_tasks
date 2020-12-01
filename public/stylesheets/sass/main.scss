@@ -201,7 +201,7 @@ body{
   .logo
     {
       img{
-        inline-size: 95pt;
+        inline-size: 85pt;
       }
   }
   
@@ -209,6 +209,8 @@ body{
 
 .branding{
   margin: 25px;
+  position: fixed;
+  bottom: 120px;
 }
 
 

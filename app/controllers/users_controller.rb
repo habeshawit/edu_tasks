@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   # GET: /users/new
-  get "/signup" do   #add a check if email address already exists
+  get "/signup" do  
     if logged_in? 
       redirect '/courses'
     else 
@@ -59,10 +59,10 @@ class UsersController < ApplicationController
 
   get '/logout' do
     if logged_in?
-      session.clear
+        session.clear
         redirect to '/'
     else
-        redirect to 'views/welcome'
+        redirect to '/'
     end
   end
 
