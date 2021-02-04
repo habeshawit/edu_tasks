@@ -6,7 +6,7 @@
   <%list_assignment = @course.assignments.split("\r\n")%>
   <%list_assignment.each do |a|%>
   <li><%=a%></li>
-  <%end%>
+  <%end%><br>
   <div class=notes>
   <h3><label><strong> Notes:</strong></label></h3>
   <%notes = @course.notes.split("\r\n")%>
