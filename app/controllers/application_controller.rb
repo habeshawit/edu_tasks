@@ -2,6 +2,7 @@ require './config/environment'
 require 'sinatra/base'
 require 'sinatra/flash'
 
+
 class ApplicationController < Sinatra::Base
 
   configure do
