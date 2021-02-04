@@ -42,12 +42,10 @@
   outline: 1px solid #ddd;
   -moz-ouline-radius: 4px; }
 
-/* .course-box {
-  height: 80px;
+.course-box {
+  height: 480px;
   position: relative;
-  margin-bottom: 65px; 
-
-} */
+  margin-bottom: 45px; }
 
 img.course-index {
   width: 100%;
@@ -83,7 +81,7 @@ img.course-index {
   font-weight: bold; }
 
 #logo:hover {
-  color: rgb(27, 24, 24);
+  color: #fff;
   text-decoration: none; }
 
 .jumbotron {
@@ -102,7 +100,10 @@ img.course-index {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1200px; } }
+    max-width: 1200px; }
+
+  .table td {
+    max-width: 500px; } }
 html,
 body {
   height: 100%; }
@@ -324,5 +325,7 @@ body {
   100% {
     transform: scale(1, 1);
     opacity: 0; } }
+.table {
+  box-sizing: content-box; }
 
 /*# sourceMappingURL=main.css.map */

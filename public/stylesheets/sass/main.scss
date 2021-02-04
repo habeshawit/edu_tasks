@@ -453,6 +453,11 @@ img.course-index{
     .container{
         max-width: 1200px;
     }
+    .table {
+      td{
+      max-width: 500px;
+      }
+    }
 }
 
 
@@ -757,6 +762,10 @@ body {
   }
 }
 
+
+.table {
+  box-sizing: content-box;
+}
 
 
 // .field_with_errors {

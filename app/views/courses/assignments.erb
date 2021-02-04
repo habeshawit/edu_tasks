@@ -3,26 +3,36 @@
 <div class="content">
 <% display = []%>
 <%if @courses.empty? %>
-    <p>Looks like you don't have any assignments. <a href="/courses/new">Add A Course</a> to begin</p><br><br><br><br>
+      <p>Looks like you don't have any assignments. <a href="/courses/new">Add A Course</a> to begin</p>
 <%else %>
-    <% @courses.each do |course| %>
-    <%if course.assignments.empty? %>  
-      <% display << "none"%>
-    <%else %>
-      <%list_assignment = course.assignments.split("\r\n")%>
-      <%list_assignment.each do |a|%>
-      <li><%=a%> ( <a href="/courses/<%= course.id %>"><%=course.name%></a> )</li>
-      <%end%>     
-    <%end%>
-    
-    <%end%>
-    <%if !display.empty? && display.size == @courses.size%>
+    <table class="table">
+    <thead>
+        <tr>
+          <th scope="col">Assignment</th>
+          <th scope="col">Course</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @courses.each do |course| %>
+          <%if !course.assignments.empty? %>  
+              <%list_assignment = course.assignments.split("\r\n")%>         
+              <%list_assignment.each do |a|%>
+                  <tr>
+                    <td><li><%=a%></li></td>
+                    <td><a href="/courses/<%= course.id %>"><%=course.name%></a></td>
+                  </tr>
+            <%end%>             
+        <%else %>
+          <% display << "none"%>
+        <%end%>
+      <%end%>
+    </tbody>
+  </table>
+  
+  <%if !display.empty? && display.size == @courses.size%>
       <p>Looks like you dont have any assignments. Add assisgnments to your <a href="/courses">courses</a></p><br><br><br><br></p>
-    <%end%>  
+  <%end%>  
 <%end%>
 
 
-  
  </div>  
-
- 
