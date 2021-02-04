@@ -422,7 +422,7 @@ img.course-index{
 }
 
 #logo:hover{
-    color: #fff;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     
 }
@@ -452,11 +452,6 @@ img.course-index{
 @media (min-width: 1200px) {
     .container{
         max-width: 1200px;
-    }
-    .table {
-      td{
-      max-width: 500px;
-      }
     }
 }
 
@@ -764,7 +759,7 @@ body {
 
 
 .table {
-  box-sizing: content-box;
+  max-width: 800px;
 }
 
 
