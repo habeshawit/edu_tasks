@@ -1,4 +1,4 @@
-.welcome {
+/* .welcome {
   position: absolute;
   top: 0;
   left: 0;
@@ -157,7 +157,7 @@ body {
   max-width: 1200px;
   padding: 3.75%;
   /* 18px / 800px */
-  padding-top: 1.5%;
+  /* padding-top: 1.5%;
   width: 85%;
   height: 860px; }
   .wrapper .logo img {
@@ -214,6 +214,7 @@ body {
 .container .notes {
   position: fixed;
   left: 900px;
-  top: 300px; }
+  top: 300px; } */ */
 
 /*# sourceMappingURL=main.css.map */
+

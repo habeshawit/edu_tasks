@@ -20,6 +20,7 @@
   <body>
    
 <div class="wrapper">
+
 <% flash.keys.each do |alert_danger| %>
   <div class="alert_danger <%= alert_danger.to_s.gsub('_', '-') %> alert_danger-dismissible fade show" role="alert_danger">
     <%= flash[alert_danger] %>
@@ -30,8 +31,20 @@
  <% end %>
 
     <% if logged_in? %>
-<header><div class="logo"><img src="/images/logo-cyan2.png" class="img-responsive main-image"></div></header>
-<div class="header">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            
+            <a class="navbar-brand" id="logo" href="/" >EduTasks </a>
+            <a class="nav-link active" aria-current="page" href="/courses">My Courses</a>
+          <a class="nav-link active" aria-current="page" href="/courses/new">Add A New Course</a>
+          <a class="nav-link active" aria-current="page" href="/courses/assignments">Upcoming assignments</a>
+          <a class="nav-link active" aria-current="page" href="/courses/notes">My Notes</a>
+          <a class="nav-link active" aria-current="page" href="/users/<%=current_user.slug%>">Account Settings</a>
+          <a class="nav-link active" aria-current="page" href="/logout">Log Out</a>
+        </div>
+        </nav>
+<!--<div class="header">
 
 <div class="nav">
   <div><a href="/courses">My Courses</a></div>
@@ -41,19 +54,21 @@
   <div><a href="/users/<%=current_user.slug%>">Account Settings</a></div>
   <div><a href="/logout">Log Out</a></div>
 </div>
-</div>
+</div>-->
 
    
       <% end %>
 <div class="container">
         <%= yield %>
 </div>
+<!--
       <footer class="branding">
         <small>&copy; 2020 <strong>EduTasks</strong></small>
       </footer>
-    </div>
+    </div>-->
 
-
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!--[if lt IE 7]>
       <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
