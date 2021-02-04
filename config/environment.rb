@@ -26,9 +26,6 @@ configure :development do
     :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
   )
   
-  require './app/controllers/application_controller'
-  require_all 'app'
-  
 end
 
 configure :production do
@@ -43,3 +40,6 @@ configure :production do
    :encoding => 'utf8'
  )
 end
+
+require './app/controllers/application_controller'
+require_all 'app'
