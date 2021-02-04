@@ -2,15 +2,18 @@
 <h2></h2>
 <% if logged_in? %>
   <form action='/courses' method="post">
-  <label>Course Name</label>
-  <br><input type="text" name="name" required> *<br>
-  <label>Course Schedule</label>
-  <br><input type="text" name="schedule"><br>
-  <label>Assignments</label>
-  <br><textarea name="assignments" rows="4" cols="50"></textarea><br>
-  <label>Notes</label>
-  <br><textarea name="notes"rows="4" cols="50"></textarea><br>
-  <button>Save</button>
+    <div class="form-control">
+      <label>Course Name</label>
+      <br><input class="form-control" type="text" name="name" required> *<br>
+    
+      <label>Course Schedule</label>
+      <br><input class="form-control" type="text" name="schedule"><br>
+      <label>Assignments</label>
+      <br><textarea class="form-control" name="assignments" rows="4" cols="50"></textarea><br>
+      <label>Notes</label>
+      <br><textarea class="form-control" name="notes"rows="4" cols="50"></textarea><br>
+      <button>Save</button>
+    </div>
   </form>
 
   <% else %>
