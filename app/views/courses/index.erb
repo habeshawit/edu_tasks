@@ -1,5 +1,5 @@
 <h1>Hi, <%= @user.username %>!</h1>
-<div class="content">
+<div class="course-content">
 <h2 >Courses You are Enrolled in</h2>
 <% if @courses.empty? %>
 <p>You have not created any courses. <a href="/courses/new">Add A Course</a> to begin</p><br><br><br><br>
@@ -21,6 +21,6 @@
    <% end %>   
   </div>
  
-  &emsp;<a href="/courses/new"><button>Add A Course</button></a><br>
+  &emsp;<a href="/courses/new"><button class="btn btn-primary">Add A Course</button></a><br>
   <%end%>
  </div>  

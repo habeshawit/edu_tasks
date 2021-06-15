@@ -1,23 +1,31 @@
-<div class="welcome">
+  <div class="welcome-container">
+    <div class="title">
+      <h1>Welcome to EduTasks!</h1>
+        
+      <div class="content">
+        <h6> A sinatra app to help you track all the courses you are enrolled in. Stay on top of assignments, due dates, course requirements and more!</h6>
+      </div><br>
 
-<div class="title"><h1>Welcome to EduTasks!</h1>
-    
-    <div class="content">
-      <p> A sinatra app to help you track all the courses you are enrolled in. Stay on top of assignments, due dates, course requirements and more!</p>
-
- </div>
-   <div class="wrapper2">
-   <h1>Register Now</h1>
-        <form method="POST" action="/signup">
-        Username:</strong><br><input type = "text" name="username" required><br>
-        Email:</strong><br><input type="text" name="email" required><br>
-        Password:</strong><br><input type="password" name="password" minlength="6" required><br><br>
-        <button>Sign Up</button>
+      <h1>Register Now</h1>
+      <form method="POST" action="/signup">
+          <div class="form-group">
+            <label for="exampleInputUsername1">Username</label>
+            <input class="form-control" id="exampleInputUsername1" aria-describedby="emailHelp" placeholder="Enter a username" input type = "text" name="username" required><br>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="text" name="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"><br>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="password" minlength="6" required class="form-control" id="exampleInputPassword1" placeholder="Password"><br>
+          </div>
+          <button type="submit" class="btn btn-primary" style="background-color:teal;border-color:teal">Register</button>
+          <hr>
+          <p>Already have an account? <a href="/login">Sign In</a><p>
       </form>
+    </div>
+  </div>
+  
 
-      <br><h6>Already have an account? <a href="/login">Sign In</a><h6>
- </div>
 
-
-</div>
-</div>

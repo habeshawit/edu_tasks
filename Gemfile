@@ -15,7 +15,7 @@ gem 'bcrypt'  #encrypts password
 gem 'rb-readline'
 gem 'rack-flash3'
 gem  'sinatra-flash'
-gem 'sass'
+# gem 'sass'
 
 group :test do
   gem 'rspec'

@@ -1,0 +1,165 @@
+
+    /* justify-content: right!important;
+    align-items: center!important;
+    text-align: center!important;
+    margin-right: -500px;
+    margin-bottom: 50px; */
+
+/* 
+.welcome-container{
+    width: 1200px;
+    top: 50%!important;
+    left: 50%!important;
+    transform: translate(-50% , -50%)!important;
+    position: absolute!important;
+    text-align: center!important;
+} */
+
+.display-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:white;
+    width: 640px;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.welcome-container form{
+    width: 400px!important;
+    display: inline-block;
+    text-align: center;
+}
+
+html,body{
+    background: url("https://media.istockphoto.com/photos/blue-abstract-background-or-texture-picture-id1138395421?k=6&m=1138395421&s=612x612&w=0&h=bJ1SRWujCgg3QWzkGPgaRiArNYohPl7-Wc4p_Fa_cyA=") no-repeat center ; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+      width: 100vw!important;
+      height: 100vh!important;
+      
+}
+
+/* .display-container{
+   color: white;
+   padding-top: 50px;
+} */
+
+/* .welcome{
+    width: 400px!important;
+    top: 50%!important;
+    left: 50%!important;
+    transform: translate(-50% , -50%)!important;
+    position: absolute!important;
+} */
+
+.welcome-container a{
+    color: white!important;
+    text-decoration: underline!important;
+    font-weight: 700!important;
+}
+
+.login-container{
+    padding: 50px;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    /* top: 50%; */
+    left: 50%;
+    /* transform: translate(-50% , -50%); */
+    position: absolute;
+}
+
+.container-form{
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    /* margin-left: -40px; */
+    max-width: 1200px;
+    padding-bottom: var(--bs-gutter-x,.75rem);
+    text-align: left!important;
+
+}
+
+.dropdown, .dropend, .dropstart, .dropup {
+    position: relative;
+    color: green;
+}
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 100;
+    /* display: block!important; */
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    /* border: 1px solid rgba(0,0,0,.15); */
+    border: 1px solid red;
+    border-radius: .25rem;
+}
+
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-toggle {
+    white-space: nowrap;
+}
+
+.h6, h6 {
+    font-size: 20px!important;
+    font-weight: 100!important;
+}
+
+.content{
+    width: 100vw!important;
+    margin:20px;
+}
+
+
+.nav-item {
+    margin-bottom: 5px;
+}
+
+.logged-in-container{
+    /* display: flex; */
+    width: 850px;
+    justify-content: center;
+    background-color: #0666a3;
+}
+
+.logged-in-container form{
+    width: 800px!important;
+}
+
+.container-form label{
+    color:#0666a3;
+}
+
+.logged-in-container button{
+    background-color:#0666a3!important;
+}

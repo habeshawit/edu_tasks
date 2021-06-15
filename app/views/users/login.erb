@@ -1,13 +1,26 @@
-<div class=login>
-<div class="wrapper2">
-<h1>Log In</h1>
 
-<form method="POST" action="/login">
-  Email Address:</strong><input type = "text" name="email" id="email" required><br>
-
-  Password:</strong><input type="password" name="password" id="password" required><br>
-  <button>Log In</button >
-</form>
-
+<div class="homepage">
+  <div class="welcome-container">
+    <div class="title">
+      <h1>Welcome to EduTasks!</h1>
+      <div class="wrapper2">
+      <br><br>
+        <form method="POST" action="/login">
+            <img class="mb-4" src="https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png" alt="" width="72" height="72" Style="border-radius: 5rem;">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="text" name="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"><br>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="password" minlength="6" required class="form-control" id="exampleInputPassword1" placeholder="Password"><br>
+            </div>
+            <button type="submit" class="btn btn-primary" style="background-color:teal;border-color:teal">Sign In</button>
+            <hr>
+            <p>Don't have an account? <a href="/">Sign Up</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
+  
