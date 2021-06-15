@@ -1,13 +1,16 @@
-<h1><%= current_user.username%>'s Profile</h1><br>
+<div class=logged-in-container>
+  <div class="course">
+    <h1><%= current_user.username%>'s Profile</h1><br>
 
-  <p><label><strong> Username:</strong></label>&emsp;<%= current_user.username %></p>
-  <p><label><strong> Email Address:</strong></label>&emsp;&emsp;<%= current_user.email %></p><br>
-  
-    <a href="/users/
-    /edit"><button class="btn btn-primary">Edit Profile</button></a><br><br>
+      <p><label><strong> Username:</strong></label>&emsp;<%= current_user.username %></p>
+      <p><label><strong> Email Address:</strong></label>&emsp;&emsp;<%= current_user.email %></p><br>
+      
+        <a href="/users/
+        /edit"><button class="btn btn-primary">Edit Profile</button></a>
 
-    <form onsubmit="return confirm('Are you sure you want to delete your account?')" action="/users/<%= current_user.id%>/delete" method="post">
-    <input id="hidden" type="hidden" name="_method" value="delete">
-    <button class="btn btn-primary">Delete Account</button>
-</form>
-
+        <form onsubmit="return confirm('Are you sure you want to delete your account?')" action="/users/<%= current_user.id%>/delete" method="post">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <button class="btn btn-primary">Delete Account</button>
+    </form>
+  </div>
+</div>

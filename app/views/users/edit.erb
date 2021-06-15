@@ -1,13 +1,16 @@
-<h1 class="w3-text-teal">Editing Your Account Details</h1>
-<h2></h2>
-<form method=post action="/users/<%=current_user.id%>">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-    <label><strong> User Name:</strong></label>
-  <input type="text" name="username" value="<%= current_user.username %>"><br>
-  <label><strong> Email Address:</strong></label>
-  <input type="text" name="email" value="<%= current_user.email%>"><br>
-  <label><strong> Password:</strong></label>
-  </strong><input type="password" name="password" minlength="6" required><br>
-    <button>Save</button>
+<div class=logged-in-container>
 
-</form>
+  <h1 class="w3-text-teal">Editing Your Account Details</h1>
+  <h2></h2>
+  <form method=post action="/users/<%=current_user.id%>">
+      <input id="hidden" type="hidden" name="_method" value="patch">
+      <label><strong> User Name:</strong></label>
+    <input type="text" name="username" value="<%= current_user.username %>"><br>
+    <label><strong> Email Address:</strong></label>
+    <input type="text" name="email" value="<%= current_user.email%>"><br>
+    <label><strong> Password:</strong></label>
+    </strong><input type="password" name="password" minlength="6" required><br>
+      <button>Save</button>
+
+  </form>
+</div>

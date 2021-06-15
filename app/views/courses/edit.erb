@@ -1,16 +1,19 @@
-<h1>Editing <%=@course.name%></h1>
-
-<form method=post action="/courses/<%=@course.id%>">
-  <div class="form-control">
-    <input id="hidden" class="form-control" type="hidden" name="_method" value="patch">
-    <label><strong> Name:</strong></label>
-    <br><input class="form-control" type="text" name="name" value="<%= @course.name %>" required ><br>
-    <label><strong> Schedule:</strong></label>
-    <br><input class="form-control" type="text" name="schedule" value="<%= @course.schedule%>"><br>
-    <label><strong> Assignments:</strong></label>
-    <br><textarea class="form-control" name="assignments"  rows="4" cols="50"><%= @course.assignments%></textarea><br>
-    <label><strong>Notes</label>
-    <br><textarea class="form-control" name="notes" rows="4" cols="50"><%= @course.notes %></textarea><br>
-    <button>Save</button>
+<div class=logged-in-container>
+  <h1 style="text-align: center;">Editing <%=@course.name%></h1>
+  <div class="container-form">
+    <form method=post action="/courses/<%=@course.id%>">
+      <div class="form-control">
+        <input id="hidden" class="form-control" type="hidden" name="_method" value="patch">
+        <label><strong> Name:</strong></label>
+        <br><input class="form-control" type="text" name="name" value="<%= @course.name %>" required ><br>
+        <label><strong> Schedule:</strong></label>
+        <br><input class="form-control" type="text" name="schedule" value="<%= @course.schedule%>"><br>
+        <label><strong> Assignments:</strong></label>
+        <br><textarea class="form-control" name="assignments"  rows="4" cols="50"><%= @course.assignments%></textarea><br>
+        <label><strong>Notes</label>
+        <br><textarea class="form-control" name="notes" rows="4" cols="50"><%= @course.notes %></textarea><br>
+        <button class="btn btn-primary">Save Course</button>
+      </div>
+    </form>
   </div>
-</form>
+</div>

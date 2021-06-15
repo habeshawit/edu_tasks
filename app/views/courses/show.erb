@@ -1,23 +1,33 @@
-<h1><%= @course.name %> Tasks</h1>
+<div class="logged-in-container course"> 
+  <div class="course">
+  <div class="row">
+    <div class="col">
+      <h1 style="color:darkcyan;"><%= @course.name %> Tasks</h1><hr>
+      <h4><label><strong>Schedule:</strong></label></h4>
+      <p><%= @course.schedule %><p>
+      <h4><label><strong> Assignments:</strong></label></h4>
+      <%list_assignment = @course.assignments.split("\r\n")%>
+      <%list_assignment.each do |a|%>
+      <li><%=a%></li>
+      <%end%><br>
+    </div>
+    <div class="col"><br><br><br>
+      <div class=notes>
+      <h4><label><strong> Notes:</strong></label></h4>
+      <%notes = @course.notes.split("\r\n")%>
+      <%notes.each do |note|%>
+      <li><%=note%></li>
+      <%end%><br>
+      </div>
+    </div>
 
-  <h3><label><strong> Schedule:</strong></label></h3>
-  <p><li><%= @course.schedule %></li><p>
-  <h3><label><strong> Assignments:</strong></label></h3>
-  <%list_assignment = @course.assignments.split("\r\n")%>
-  <%list_assignment.each do |a|%>
-  <li><%=a%></li>
-  <%end%><br>
-  <div class=notes>
-  <h3><label><strong> Notes:</strong></label></h3>
-  <%notes = @course.notes.split("\r\n")%>
-  <%notes.each do |note|%>
-  <li><%=note%></li>
-  <%end%><br>
+      <a href="/courses/<%=@course.id%>/edit"><button class="btn btn-primary">Edit Course</button></a>
+
+      <form onsubmit="return confirm('Are you sure you want to delete this course?')" action="/courses/<%= @course.id%>/delete" method="post">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <button class="btn btn-primary">Delete Course</button>
+      </form>
+    
+    </div><!--end of row-->
   </div>
-
-   <br><br><br><br><br> <a href="/courses/<%=@course.id%>/edit"><button>Edit Course</button></a>
-
-    <form onsubmit="return confirm('Are you sure you want to delete this course?')" action="/courses/<%= @course.id%>/delete" method="post">
-    <input id="hidden" type="hidden" name="_method" value="delete">
-    <button>Delete Course</button>
-</form>
+</div>
