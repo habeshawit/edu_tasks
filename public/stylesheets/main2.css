@@ -181,8 +181,42 @@ table li{
 }
 
 .course-content{
-    margin-right: 20px;
-    margin-left: 20px;
-    padding:20px
+    /* margin-right: 20px;
+    margin-left: 20px; */
+    padding:20px;
+    text-align: center;
 }
 
+a:link, a:visited {
+    text-decoration: none;
+    color:black;
+  }
+  
+  a:hover, a:active {
+    text-decoration: none!important;
+  }
+
+
+.course-boxes{
+    width: 640px; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+.course-boxes row{
+    justify-content: center;
+}
+
+
+.row {
+    display: table;
+}
+
+[class*="col-md-3"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+    margin:15px
+}
