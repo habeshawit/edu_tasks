@@ -12,11 +12,13 @@
 }
 
 .welcome-container{
-    margin-left: auto;
-    margin-right: auto;
-    width: 8em;
-    color: white;
-    /* width: 800px!important; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:white;
 }
 
 .welcome-container form{
@@ -113,8 +115,9 @@ html,body{
 
 .content{
     width: 100vw!important;
-    margin:20px;
-    margin-left: -350px;
+    padding: 20px;
+    /* margin:20px;
+    margin-left: -350px; */
 }
 
 
@@ -169,3 +172,17 @@ table{
 table li{
     margin-left:20px;
 }
+/* 
+.nav a:hover a:active{
+    text-decoration: red!important;
+} */
+.my-courses-index{
+    background-color: white!important;
+}
+
+.course-content{
+    margin-right: 20px;
+    margin-left: 20px;
+    padding:20px
+}
+

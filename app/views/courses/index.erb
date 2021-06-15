@@ -1,28 +1,31 @@
 <div class=logged-in-container>
-  <h1>Hi, <%= @user.username %>!</h1>
-  <div class="course-content">
-  <h2 >Courses You are Enrolled in</h2>
-  <% if @courses.empty? %>
-  <p>You have not created any courses. <a href="/courses/new">Add A Course</a> to begin</p><br><br><br><br>
-  <% else %>
-    <div class="row"> 
-    <% @courses.each do |course| %>
-      <div class = "col-sm-3">
-        <div class="course-box">
-  <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-    <div class="card-header"><%= course.name %></div>
-    <div class="card-body">
-      <h5 class="card-title remove_link_colour"><a href="/courses/<%= course.id %>">View Course</a></h5>
-      <p class="card-text"><%= course.schedule %></p>
-    </div>
-  </div>
-        
+  <div class="my-courses-index">
+    
+    <div class="course-content">
+      <h1>Hi, <%= @user.username %>!</h1>
+      <h3>Courses You are Enrolled in</h3><hr>
+      <% if @courses.empty? %>
+      <p>You have not created any courses. <a href="/courses/new">Add A Course</a> to begin</p><br><br><br><br>
+      <% else %>
+        <div class="row"> 
+        <% @courses.each do |course| %>
+          <div class = "col-sm-3">
+            <div class="course-box">
+      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+        <div class="card-header"><%= course.name %></div>
+        <div class="card-body">
+          <h5 class="card-title remove_link_colour"><a href="/courses/<%= course.id %>">View Course</a></h5>
+          <p class="card-text"><%= course.schedule %></p>
         </div>
       </div>
-    <% end %>   
-    </div>
-  
-    &emsp;<a href="/courses/new"><button class="btn btn-primary">Add A Course</button></a><br>
-    <%end%>
-  </div>  
+            
+            </div>
+          </div>
+        <% end %>   
+        </div>
+      
+        &emsp;<a href="/courses/new"><button class="btn btn-primary">Add A Course</button></a><br>
+        <%end%>
+    </div>  
+  </div>
 </div>
