@@ -1,5 +1,7 @@
 <div class=logged-in-container>
-  <h1>Upcoming Assignments:</h1>
+    <div class="course" style="color:darkcyan;">
+
+  <h1>Upcoming Assignments</h1><hr>
 
 
   <% display = []%>
@@ -31,10 +33,12 @@
     </table>
     
     <%if !display.empty? && display.size == @courses.size%>
+    <div class="course">
         <p>Looks like you dont have any assignments. Add assisgnments to your <a href="/courses">courses</a></p><br><br><br><br></p>
+    </div>
     <%end%>  
   <%end%>
 
 
-  <%# </div>   %>
+  </div>  
 </div>

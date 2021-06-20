@@ -1,6 +1,6 @@
 <div class=logged-in-container>
   <div class="course" style="color:darkcyan;">
-  <h1>Notes:</h1><hr>
+  <h1>Notes</h1><hr>
   <% display = []%>
   <% if @courses.empty? %>
   <p>You have not created any notes. <a href="/courses/new">Add A Course</a> to begin</p><br><br><br><br>
@@ -19,7 +19,7 @@
       <%end%>
 
 
-  <%if !display.empty? && display.size == @courses.size%>
+      <%if !display.empty? && display.size == @courses.size%>
         <p>Looks like you don't have any notes. Add notes to your <a href="/courses">courses</a></p>
       <%end%> 
     <%end%>

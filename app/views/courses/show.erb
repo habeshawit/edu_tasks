@@ -1,8 +1,8 @@
 <div class="logged-in-container course"> 
   <div class="course">
   <div class="row">
-    <div class="col">
       <h1 style="color:darkcyan;"><%= @course.name %> Tasks</h1><hr>
+    <div class="col">
       <h4><label><strong>Schedule:</strong></label></h4>
       <p><%= @course.schedule %><p>
       <h4><label><strong> Assignments:</strong></label></h4>
@@ -11,7 +11,7 @@
       <li><%=a%></li>
       <%end%><br>
     </div>
-    <div class="col"><br><br><br>
+    <div class="col">
       <div class=notes>
       <h4><label><strong> Notes:</strong></label></h4>
       <%notes = @course.notes.split("\r\n")%>

@@ -4,7 +4,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color:white;
+    /* color:white; */
     width: 640px;
     height: auto;
     margin: 0 auto;
@@ -18,7 +18,7 @@
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
     text-align: center;
-    color:white;
+    /* color:white; */
 }
 
 .welcome-container form{
@@ -28,7 +28,7 @@
 }
 
 html,body{
-    background: url("https://media.istockphoto.com/photos/blue-abstract-background-or-texture-picture-id1138395421?k=6&m=1138395421&s=612x612&w=0&h=bJ1SRWujCgg3QWzkGPgaRiArNYohPl7-Wc4p_Fa_cyA=") no-repeat center ; 
+    background: url("https://media.tarkett-image.com/large/TH_26500003_001.jpg") no-repeat center ; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -43,7 +43,7 @@ html,body{
 }
 
 .welcome-container a{
-    color: white!important;
+    /* color: white!important; */
     text-decoration: underline!important;
     font-weight: 700!important;
 }
@@ -128,7 +128,7 @@ html,body{
 .logged-in-container{
     width: 850px;
     justify-content: center;
-    background-color: #0666a3;
+    /* background-color: #0666a3; */
 
     /* width: 100%; Can be in percentage also. */
     height: auto;
@@ -137,10 +137,6 @@ html,body{
     position: relative;
     margin-top: 40px;
 }
-
-/* .logged-in-container form{
-    width: 800px!important;
-} */
 
 .container-form label{
     color:#0666a3;
@@ -152,7 +148,7 @@ html,body{
 }
 
 .logged-in-container .course{
-    background-color: white!important;
+    /* background-color: white!important; */
     color: black;
     padding: 20px;
     text-align: left;
@@ -165,9 +161,9 @@ tbody, td, tfoot, th, thead, tr {
     text-align: left;
 }
 
-table{
+/* table{
     background-color: white!important;
-}
+} */
 
 table li{
     margin-left:20px;
@@ -176,9 +172,9 @@ table li{
 .nav a:hover a:active{
     text-decoration: red!important;
 } */
-.my-courses-index{
+/* .my-courses-index{
     background-color: white!important;
-}
+} */
 
 .course-content{
     /* margin-right: 20px;
@@ -197,16 +193,25 @@ a:link, a:visited {
   }
 
 
-.course-boxes{
-    width: 640px; /* Can be in percentage also. */
+/* .course-boxes{
+    width: 640px; 
     height: auto;
     margin: 0 auto;
     padding: 10px;
     position: relative;
+} */
+
+/* .course-boxes row{
+    justify-content: center;
+} */
+
+.course-boxes col{
+    background-color: lightgrey!important; 
+    border-radius: 0.2rem;
 }
 
-.course-boxes row{
-    justify-content: center;
+.course-boxes h5{
+    margin-top: 10px;
 }
 
 
@@ -219,4 +224,23 @@ a:link, a:visited {
     display: table-cell;
     vertical-align: top;
     margin:15px
+}
+
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: none!important;
+    background-clip: padding-box;
+    /* border: 1px solid #ced4da; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* border-radius: .25rem; */
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }

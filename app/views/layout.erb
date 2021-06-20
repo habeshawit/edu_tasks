@@ -75,7 +75,7 @@
                     <div class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" style="text-decoration: none; color:black; padding-left:0px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                        <strong><%=current_user.slug%></strong>
+                        <strong><%=current_user.username%></strong>
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/users/<%=current_user.slug%>">Account Settings</a>
@@ -87,9 +87,7 @@
           </div> <!--end of col1-->
       <% end %>    
     <div class="col-10">
-      <%# <div class="display-container"> %>
         <%= yield %>
-      <%# </div>     %>
     </div><!--end of col2-->
   </div><!--end of row-->
       
